@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import axios from 'axios'
 
 const DeleteUser = () => {
 
+    const inputRef = useRef()
     const [userId, setUserId] = useState('')
+    const [deleteMessage, setDeleteMessage] = useState('')
 
     const deleteUser = (e) => {
         e.preventDefault()        
@@ -11,10 +13,12 @@ const DeleteUser = () => {
         axios.delete('http://localhost:5000/api/users/'+ userId)
             .then(response=>{               
                 console.log(response)               
-               
+               setDeleteMessage("User successfully deleted")
+               setUserId("")
             })
             .catch(err=>{
-                console.log(err)     
+                console.log(err) 
+                setDeleteMessage("An error occurred")    
             })
         }
 
@@ -29,7 +33,8 @@ const DeleteUser = () => {
                         type="text"
                         value={userId}
                         onChange={(e)=>setUserId(e.target.value)}
-                        required                           
+                        required
+                        ref = {inputRef}                           
                     />
                     </div>
 
@@ -40,6 +45,7 @@ const DeleteUser = () => {
                         className="btn-primary btn-primary-submit"
                     />
                     </div>
+                    <p>{deleteMessage}</p>
                 </form>
         </div>
     )

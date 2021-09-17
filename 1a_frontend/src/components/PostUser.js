@@ -6,7 +6,7 @@ const PostUser = () => {
     const [userAge, setUserAge] = useState('')
     const [userEmail, setUserEmail] = useState('')
     const [userPassword, setUserPassword] = useState('')
-
+    const [updateMessage, setUpdateMessage] = useState('')
     const postUser = (e) => {
         e.preventDefault()
         
@@ -18,10 +18,15 @@ const PostUser = () => {
         })
             .then(response=>{               
                 console.log(response)               
-               
+               setUpdateMessage('user successfully added')
+               setUserAge("")
+               setUserEmail("")
+               setUserPassword("")
+               setUsername("")
             })
             .catch(err=>{
                 console.log(err)     
+                setUpdateMessage('an error occurred')
             })
         }
 
@@ -74,6 +79,7 @@ const PostUser = () => {
                     />
                     </div>
             </form>
+            <p>{updateMessage}</p>
         </div>
     )
 }
