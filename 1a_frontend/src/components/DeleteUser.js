@@ -12,13 +12,17 @@ const DeleteUser = () => {
 
         axios.delete('http://localhost:5000/api/users/'+ userId)
             .then(response=>{               
-                console.log(response)               
-               setDeleteMessage("Vartotojas sėkmingai ištrintas")
+                     
+               if(response.data.status === 'Failed'){
+                setDeleteMessage("Vartotojo nepavyko ištrinti")  
+               } else if (response.data.status === 'Success'){
+                setDeleteMessage("Vartotojas sėkmingai ištrintas")                
+               }      
+               
                setUserId("")
             })
             .catch(err=>{
-                console.log(err) 
-                setDeleteMessage("Įvyko klaida")    
+                console.log(err)                  
             })
         }
 

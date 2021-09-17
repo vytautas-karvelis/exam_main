@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+
+
 const PostUser = () => {
 
     const [userName, setUsername] = useState('')
@@ -17,8 +19,12 @@ const PostUser = () => {
             password:userPassword
         })
             .then(response=>{               
-                console.log(response)               
-               setUpdateMessage('Vartotojas sėkmingai pridėtas')
+                if(response.data.status === 'Failed'){
+                    setUpdateMessage('Vartotojo nepavyko pridėti')
+                   } else if (response.data.status === 'Success'){
+                    setUpdateMessage('Vartotojas sėkmingai pridėtas')            
+                   }     
+              
                setUserAge("")
                setUserEmail("")
                setUserPassword("")

@@ -44,10 +44,12 @@ app.post("/api/users", (req, res)=>{
     
       user
         .save()
-        .then((data) => {
-          res.json({ message: 'New user added!' });
+        .then((data) => res.json({ status: 'Success' }))
+        .catch((err) =>{
+          console.log('an error occued')
+          res.json({ status: 'Failed' })
         })
-        .catch((err) => console.log(err));
+   
 })
 
 app.put("/api/users/:id", (req, res)=>{
@@ -59,16 +61,25 @@ app.put("/api/users/:id", (req, res)=>{
       let userId = req.params.id;
     
       User.findByIdAndUpdate(userId, req.body)
-        .then((data) => res.json({ message: 'User updated!' }))
-        .catch((err) => console.log(err));
+        .then((data) => res.json({ status: 'Success' }))
+        .catch((err) =>{
+            console.log('an error occued')
+            res.json({ status: 'Failed' })
+        })
+ 
 })
 
 app.delete("/api/users/:id", (req, res)=>{
     let userId = req.params.id;
 
-    User.findByIdAndDelete(userId)
-      .then((data) => res.json({ message: 'User deleted!' }))
-      .catch((err) => console.log(err));
+        User.findByIdAndDelete(userId)
+        .then((data) => res.json({ status: 'Success' }))
+        .catch((err) =>{
+          console.log('an error occued')
+          res.json({ status: 'Failed' })
+        } )
+   
+   
 })
 
 

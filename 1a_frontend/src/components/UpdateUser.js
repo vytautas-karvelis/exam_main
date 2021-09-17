@@ -10,7 +10,7 @@ const ViewUsers = ({user}) => {
     const [userId, setUserId] = useState('')
     const [updateMessage, setUpdateMessage] = useState('')
 
-    const postUser = (e) => {
+    const updateUser = (e) => {
         e.preventDefault()
         
         axios.put('http://localhost:5000/api/users/'+ userId, {
@@ -19,9 +19,15 @@ const ViewUsers = ({user}) => {
             email:userEmail,
             password:userPassword           
         })
-            .then(response=>{               
-                console.log(response)               
-               setUpdateMessage('Vartotojas sėkmingai atnaujintas')
+            .then(response=>{     
+               
+               if(response.data.status === 'Failed'){
+                setUpdateMessage('Vartotojo nepavyko atnaujinti')
+               } else if (response.data.status === 'Success'){
+                setUpdateMessage('Vartotojas sėkmingai atnaujintas')            
+               }    
+
+
                setUserAge("")
                setUserEmail("")
                setUserPassword("")
@@ -36,7 +42,7 @@ const ViewUsers = ({user}) => {
     return (
       <div className="container">
        <h2>Pakeisti vartotoją</h2>
-            <form onSubmit={postUser}>
+            <form onSubmit={updateUser}>
             <div className="form-control">
             <label className="form-label" >Id</label>
             <input                            
