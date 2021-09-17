@@ -7,7 +7,7 @@ import DeleteUser from './components/DeleteUser';
 function App() {
   return (
     <div className="App">
-      <h1>Vartotojų aplikacija</h1>
+      <h1>Vartotojų Tvarkyklė</h1>
       <hr></hr>
         <div className="appContainer">
           <ViewUsers/>
