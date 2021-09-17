@@ -13,20 +13,20 @@ const DeleteUser = () => {
         axios.delete('http://localhost:5000/api/users/'+ userId)
             .then(response=>{               
                 console.log(response)               
-               setDeleteMessage("User successfully deleted")
+               setDeleteMessage("Vartotojas sėkmingai ištrintas")
                setUserId("")
             })
             .catch(err=>{
                 console.log(err) 
-                setDeleteMessage("An error occurred")    
+                setDeleteMessage("Įvyko klaida")    
             })
         }
 
 
     return (
         <div className="container">
-            <h2>Delete User</h2>
-                <form id="logInForm" onSubmit={deleteUser}>
+            <h2>Ištrinti vartotoją</h2>
+                <form onSubmit={deleteUser}>
                     <div className="form-control">
                     <label className="form-label" >Id</label>
                     <input                            
@@ -41,8 +41,7 @@ const DeleteUser = () => {
                     <div className="form-control">
                     <input
                         type="submit"
-                        value="Delete specified User"
-                        className="btn-primary btn-primary-submit"
+                        value="Ištrinti vartotoją"                     
                     />
                     </div>
                     <p>{deleteMessage}</p>

@@ -21,7 +21,7 @@ const ViewUsers = ({user}) => {
         })
             .then(response=>{               
                 console.log(response)               
-               setUpdateMessage('user successfully updated')
+               setUpdateMessage('Vartotojas sėkmingai atnaujintas')
                setUserAge("")
                setUserEmail("")
                setUserPassword("")
@@ -29,14 +29,14 @@ const ViewUsers = ({user}) => {
                setUserId("")
             })
             .catch(err=>{
-                setUpdateMessage('an error occurred')
+                setUpdateMessage('Įvyko klaida')
             })
         }
 
     return (
       <div className="container">
-       <h2>Update user</h2>
-            <form id="logInForm" onSubmit={postUser}>
+       <h2>Pakeisti vartotoją</h2>
+            <form onSubmit={postUser}>
             <div className="form-control">
             <label className="form-label" >Id</label>
             <input                            
@@ -47,7 +47,7 @@ const ViewUsers = ({user}) => {
             />
             </div>
             <div className="form-control">
-                <label className="form-label" >Name</label>
+                <label className="form-label" >Vardas</label>
                 <input                            
                     type="text"
                     value={userName}
@@ -56,7 +56,7 @@ const ViewUsers = ({user}) => {
                 />
                 </div>
             <div className="form-control">
-                <label className="form-label" >Age</label>
+                <label className="form-label" >Amžius</label>
                 <input                            
                     type="text"
                     value={userAge}
@@ -65,7 +65,7 @@ const ViewUsers = ({user}) => {
                 />
                 </div>
             <div className="form-control">
-            <label className="form-label">Email</label>
+            <label className="form-label">El. paštas</label>
                 <input                           
                     type="email"
                     value={userEmail}
@@ -75,7 +75,7 @@ const ViewUsers = ({user}) => {
             </div>
 
             <div className="form-control">
-            <label className="form-label">Password</label>
+            <label className="form-label">Slaptažodis</label>
             <input                        
                 type="password"
                 value={userPassword}
@@ -87,8 +87,7 @@ const ViewUsers = ({user}) => {
             <div className="form-control">
             <input
                 type="submit"
-                value="Update specified user"
-                className="btn-primary btn-primary-submit"
+                value="Pakeisti vartotoją"               
             />
             </div>
             </form>

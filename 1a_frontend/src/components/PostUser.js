@@ -18,7 +18,7 @@ const PostUser = () => {
         })
             .then(response=>{               
                 console.log(response)               
-               setUpdateMessage('user successfully added')
+               setUpdateMessage('Vartotojas sėkmingai pridėtas')
                setUserAge("")
                setUserEmail("")
                setUserPassword("")
@@ -26,16 +26,16 @@ const PostUser = () => {
             })
             .catch(err=>{
                 console.log(err)     
-                setUpdateMessage('an error occurred')
+                setUpdateMessage('Įvyko klaida')
             })
         }
 
     return (
         <div className="container">
-                <h2>Create User</h2>
-                <form id="logInForm" onSubmit={postUser}>
+                <h2>Sukurti vartotoją</h2>
+                <form onSubmit={postUser}>
                     <div className="form-control">
-                        <label className="form-label" >Name</label>
+                        <label className="form-label" >Vardas</label>
                         <input                            
                             type="text"
                             value={userName}
@@ -44,7 +44,7 @@ const PostUser = () => {
                         />
                         </div>
                     <div className="form-control">
-                        <label className="form-label" >Age</label>
+                        <label className="form-label" >Amžius</label>
                         <input                            
                             type="text"
                             value={userAge}
@@ -53,7 +53,7 @@ const PostUser = () => {
                         />
                         </div>
                     <div className="form-control">
-                    <label className="form-label">Email</label>
+                    <label className="form-label">El. paštas</label>
                         <input                           
                             type="email"
                             value={userEmail}
@@ -63,7 +63,7 @@ const PostUser = () => {
                     </div>
 
                     <div className="form-control">
-                    <label className="form-label">Password</label>
+                    <label className="form-label">Slaptažodis</label>
                     <input                        
                         type="password"
                         value={userPassword}
@@ -75,8 +75,7 @@ const PostUser = () => {
                     <div className="form-control">
                     <input
                         type="submit"
-                        value="Add new User"
-                        className="btn-primary btn-primary-submit"
+                        value="Pridėti naują vartotoją"                        
                     />
                     </div>
             </form>

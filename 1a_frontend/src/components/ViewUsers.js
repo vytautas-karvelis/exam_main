@@ -23,13 +23,13 @@ const ViewUsers = () => {
     }
     return (
         <div className="container">
-        <h2>User details</h2>
+        <h2>Vartotojų duomenys</h2>
         { isLoading ? (
-            <p>Loading...</p>
+            <p>Kraunama...</p>
         ) : (
         users.map((singleUser) => <User user={singleUser} key={singleUser._id}/>)
         )}
-        <Button text="load users" action={loadUsers}/>
+        <Button text="Įkrauti vartotojus" action={loadUsers}/>
         </div>
     )
 }
