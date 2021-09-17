@@ -13,8 +13,7 @@ const PORT = process.env.PORT;
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
+    useUnifiedTopology: true,   
   })
   .then((res) => {
     // Starting server
@@ -24,9 +23,7 @@ mongoose
 
 // Middlewares
 app.use(
-  cors({
-    origin: 'http://127.0.0.1:5500',
-  })
+  cors()
 );
 app.use(express.json());
 
