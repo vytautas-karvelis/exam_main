@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-const ViewUsers = ({user}) => {
+const User = ({user}) => {
 
     
     return (
@@ -16,4 +16,4 @@ const ViewUsers = ({user}) => {
     )
 }
 
-export default ViewUsers
+export default User
