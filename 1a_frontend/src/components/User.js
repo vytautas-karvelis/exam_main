@@ -6,6 +6,13 @@ const ViewUsers = ({user}) => {
     return (
       <div>
         <h3>User Details</h3>
+        <ul>
+        <li>User name: {user.name}</li>
+        <li>User age: {user.age}</li>
+        <li>User email: {user.email}</li>
+        <li>User password: {user.password}</li>
+        <li>User id: {user._id}</li>
+        </ul>
       </div>
     )
 }
