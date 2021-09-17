@@ -4,8 +4,7 @@ const ViewUsers = ({user}) => {
 
     
     return (
-      <div>
-        <h3>User Details</h3>
+      <div>      
         <ul>
         <li>User name: {user.name}</li>
         <li>User age: {user.age}</li>
