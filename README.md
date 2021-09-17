@@ -8,4 +8,4 @@ INSTRUCTIONS:
 5. Navigate to '2_backend' in the main directory
 6. Run 'npm install'
 7. Run 'node app.js' to start the backend
-8. Navigate backto '1a_frontend' and run 'npm start' to start the frontend
+8. Navigate back to '1a_frontend' and run 'npm start' to start the frontend
