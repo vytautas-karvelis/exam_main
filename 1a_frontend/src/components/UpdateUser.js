@@ -34,7 +34,7 @@ const ViewUsers = ({user}) => {
         }
 
     return (
-      <div>
+      <div className="container">
        <h2>Update user</h2>
             <form id="logInForm" onSubmit={postUser}>
             <div className="form-control">

@@ -1,0 +1,28 @@
+label {
+    display:block;
+}
+
+input[type="submit"] {
+    margin-top: 1rem;
+}
+
+.App {
+    max-width: 1000px;
+    margin:0 auto;
+}
+
+.appContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container {
+    width:50%;
+}
+
+input[type="submit"], button {
+    border-radius: 5px;
+    background-color: bisque;
+    padding:0.5rem 1.2rem;
+}

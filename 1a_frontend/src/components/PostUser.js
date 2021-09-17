@@ -31,7 +31,8 @@ const PostUser = () => {
         }
 
     return (
-        <div>
+        <div className="container">
+                <h2>Create User</h2>
                 <form id="logInForm" onSubmit={postUser}>
                     <div className="form-control">
                         <label className="form-label" >Name</label>

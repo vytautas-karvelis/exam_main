@@ -24,7 +24,7 @@ const DeleteUser = () => {
 
 
     return (
-        <div>
+        <div className="container">
             <h2>Delete User</h2>
                 <form id="logInForm" onSubmit={deleteUser}>
                     <div className="form-control">

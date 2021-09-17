@@ -22,7 +22,7 @@ const ViewUsers = () => {
         })
     }
     return (
-        <div>
+        <div className="container">
         <h2>User details</h2>
         { isLoading ? (
             <p>Loading...</p>

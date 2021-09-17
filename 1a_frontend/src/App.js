@@ -7,10 +7,15 @@ import DeleteUser from './components/DeleteUser';
 function App() {
   return (
     <div className="App">
-        <ViewUsers/>
-        <PostUser />
-        <UpdateUser />
-        <DeleteUser/>
+      <h1>User App</h1>
+      <hr></hr>
+        <div className="appContainer">
+          <ViewUsers/>
+          <PostUser />
+          <UpdateUser />
+          <DeleteUser/>        
+        </div>
+     
     </div>
   );
 }
